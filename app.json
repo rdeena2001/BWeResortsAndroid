@@ -4,13 +4,7 @@
     "slug": "bw-resorts",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -18,18 +12,11 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
       "package": "com.deenar.bwresorts"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "3a3e7948-fa80-4ac5-8d62-37b49fc6b06d"
+        "projectId": "5689554a-a69e-4cd4-a6cb-d62a6d87c3b7"
       }
     }
   }
