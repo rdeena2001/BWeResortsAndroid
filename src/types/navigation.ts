@@ -16,8 +16,11 @@ export type RootStackParamList = {
     resortId: string;
   };
   CalendarBooking: {
-    roomId: string;
-    resortId: string;
+    roomId?: string;
+    resortId?: string;
+    roomName?: string;
+    roomPrice?: number;
+    isSpecialOffer?: boolean;
   };
 };
 

@@ -141,7 +141,14 @@ const HomeScreen: React.FC = () => {
             <Text style={styles.offerSubtitle}>
               Get up to 40% off on beach resorts
             </Text>
-            <TouchableOpacity style={styles.offerButton}>
+            <TouchableOpacity
+              style={styles.offerButton}
+              onPress={() => navigation.navigate('CalendarBooking', {
+                roomName: 'Beach Resort Special',
+                roomPrice: 120,
+                isSpecialOffer: true
+              })}
+            >
               <Text style={styles.offerButtonText}>Book Now</Text>
             </TouchableOpacity>
           </View>

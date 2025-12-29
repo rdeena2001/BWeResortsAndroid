@@ -20,6 +20,7 @@ interface RouteParams {
   resortId?: string;
   roomName?: string;
   roomPrice?: number;
+  isSpecialOffer?: boolean;
 }
 
 const CalendarBookingScreen: React.FC = () => {
