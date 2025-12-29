@@ -63,7 +63,7 @@ const ProfileScreen: React.FC = () => {
   const MenuItem: React.FC<MenuItemProps> = ({ icon, title, subtitle, onPress, showBadge, badgeCount }) => (
     <TouchableOpacity style={styles.menuItem} onPress={onPress} activeOpacity={0.7}>
       <View style={styles.menuIconContainer}>
-        <Ionicons name={icon} size={24} color={Colors.primary} />
+        <Ionicons name={icon} size={24} color={Colors.white} />
         {showBadge && badgeCount && badgeCount > 0 && (
           <View style={styles.badge}>
             <Text style={styles.badgeText}>{badgeCount > 99 ? '99+' : badgeCount}</Text>

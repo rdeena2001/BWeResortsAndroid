@@ -232,14 +232,14 @@ const CalendarBookingScreen: React.FC = () => {
                 style={styles.guestButton}
                 onPress={() => setGuests(Math.max(1, guests - 1))}
               >
-                <Ionicons name="remove" size={20} color={Colors.primary} />
+                <Ionicons name="remove" size={20} color={Colors.white} />
               </TouchableOpacity>
               <Text style={styles.guestsCount}>{guests}</Text>
               <TouchableOpacity
                 style={styles.guestButton}
                 onPress={() => setGuests(Math.min(8, guests + 1))}
               >
-                <Ionicons name="add" size={20} color={Colors.primary} />
+                <Ionicons name="add" size={20} color={Colors.white} />
               </TouchableOpacity>
             </View>
           </View>
