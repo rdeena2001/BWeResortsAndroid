@@ -14,6 +14,8 @@ export type RootStackParamList = {
   RoomDetail: {
     roomId: string;
     resortId: string;
+    roomName?: string;
+    roomPrice?: number;
   };
   CalendarBooking: {
     roomId?: string;

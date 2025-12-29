@@ -9,11 +9,15 @@ import {
   Dimensions,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
 import { AppButton, AppCard, AppHeader } from '../components';
 import { Colors, FontSizes, Spacing, BorderRadius, Shadows } from '../constants';
+import { RootStackParamList } from '../types/navigation';
 
 const { width } = Dimensions.get('window');
+
+type RoomDetailScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
 interface RouteParams {
   roomId?: string;
@@ -23,7 +27,7 @@ interface RouteParams {
 }
 
 const RoomDetailScreen: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<RoomDetailScreenNavigationProp>();
   const route = useRoute();
   const params = route.params as RouteParams;
 

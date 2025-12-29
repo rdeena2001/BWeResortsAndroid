@@ -9,9 +9,11 @@ import {
   Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
 import { AppHeader, AppCard, Rating } from '../components';
 import { Colors, FontSizes, Spacing, BorderRadius, Shadows } from '../constants';
+import { RootStackParamList } from '../types/navigation';
 
 interface WishlistItem {
   id: string;
@@ -26,8 +28,10 @@ interface WishlistItem {
   description: string;
 }
 
+type WishlistScreenNavigationProp = StackNavigationProp<RootStackParamList>;
+
 const WishlistScreen: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<WishlistScreenNavigationProp>();
 
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([
     {
@@ -125,6 +129,7 @@ const WishlistScreen: React.FC = () => {
     } else {
       navigation.navigate('RoomDetail', {
         roomId: item.id,
+        resortId: 'resort1', // Default resort ID for rooms
         roomName: item.name,
         roomPrice: item.price
       });
@@ -239,7 +244,7 @@ const WishlistScreen: React.FC = () => {
       </Text>
       <TouchableOpacity
         style={styles.exploreButton}
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('MainTabs', { screen: 'Search' })}
       >
         <Text style={styles.exploreButtonText}>Explore Resorts</Text>
       </TouchableOpacity>

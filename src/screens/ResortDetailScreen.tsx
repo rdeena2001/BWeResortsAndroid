@@ -9,18 +9,22 @@ import {
   Dimensions,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
 import { AppButton, AppCard, AppHeader, Rating } from '../components';
 import { Colors, FontSizes, Spacing, BorderRadius, Shadows } from '../constants';
+import { RootStackParamList } from '../types/navigation';
 
 const { width } = Dimensions.get('window');
+
+type ResortDetailScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
 interface RouteParams {
   resortId?: string;
 }
 
 const ResortDetailScreen: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<ResortDetailScreenNavigationProp>();
   const route = useRoute();
   const params = route.params as RouteParams;
 
@@ -137,11 +141,15 @@ const ResortDetailScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <AppHeader
-        title=""
-        onBackPress={() => navigation.goBack()}
-        style={styles.header}
-      />
+      <View style={styles.header}>
+        <AppHeader
+          title=""
+          showBackButton={true}
+          onBackPress={() => navigation.goBack()}
+          backgroundColor="transparent"
+          textColor={Colors.white}
+        />
+      </View>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Resort Images */}

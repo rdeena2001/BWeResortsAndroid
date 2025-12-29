@@ -92,7 +92,8 @@ const HomeScreen: React.FC = () => {
   ];
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <View style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.greeting}>
@@ -264,21 +265,21 @@ const HomeScreen: React.FC = () => {
                 onPress={() => handleQuickAction('booking')}
               >
                 <Ionicons name="calendar-outline" size={20} color={Colors.primary} />
-                <Text style={styles.quickActionText}>Booking Help</Text>
+                <Text style={styles.quickActionTextSmall}>Booking Help</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.quickActionButton}
                 onPress={() => handleQuickAction('cancel')}
               >
                 <Ionicons name="close-circle-outline" size={20} color={Colors.primary} />
-                <Text style={styles.quickActionText}>Cancel Booking</Text>
+                <Text style={styles.quickActionTextSmall}>Cancel Booking</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.quickActionButton}
                 onPress={() => handleQuickAction('support')}
               >
                 <Ionicons name="help-circle-outline" size={20} color={Colors.primary} />
-                <Text style={styles.quickActionText}>General Support</Text>
+                <Text style={styles.quickActionTextSmall}>General Support</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -334,6 +335,7 @@ const HomeScreen: React.FC = () => {
         </View>
       </View>
     </Modal>
+    </View>
   );
 };
 
@@ -606,7 +608,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.gray50,
     borderRadius: BorderRadius.md,
   },
-  quickActionText: {
+  quickActionTextSmall: {
     fontSize: FontSizes.xs,
     color: Colors.textSecondary,
     textAlign: 'center',
